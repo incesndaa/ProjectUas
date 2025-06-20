@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sistem Booking</title>
+    <title>Register - Sistem Booking</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .gradient-bg {
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
         }
     </style>
 </head>
 <body class="font-sans antialiased">
-    <!-- Main Container -->
     <div class="min-h-screen flex flex-col md:flex-row">
-        <!-- Left Column (Illustration) -->
+        <!-- Left Column -->
         <div class="md:w-1/2 gradient-bg flex items-center justify-center p-12 text-white">
             <div class="max-w-md">
-                <h2 class="text-4xl font-bold mb-4">Sistem Booking Ruang</h2>
-                <p class="text-lg opacity-90">Masuk untuk mengakses dashboard pemesanan ruangan kampus Anda.</p>
+                <h2 class="text-4xl font-bold mb-4">Daftar Akun Baru</h2>
+                <p class="text-lg opacity-90">Bergabung untuk mulai booking ruangan di kampus Anda.</p>
             </div>
         </div>
 
-        <!-- Right Column (Form) -->
+        <!-- Right Column -->
         <div class="md:w-1/2 bg-white flex items-center justify-center p-8 md:p-12">
             <div class="w-full max-w-md">
-                <!-- Logo -->
-                <div class="flex justify-center mb-8">
-                    <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
-                    </svg>
-                </div>
-
                 <!-- Form -->
-                <form method="POST" action="{{ route('login') }}" class="space-y-6">
+                <form method="POST" action="{{ route('register') }}" class="space-y-6">
                     @csrf
+
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition duration-200"
+                            placeholder="John Doe"
+                        >
+                    </div>
 
                     <!-- Email -->
                     <div>
@@ -43,14 +48,10 @@
                             type="email" 
                             id="email" 
                             name="email" 
-                            required 
-                            autofocus
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition duration-200"
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition duration-200"
                             placeholder="email@example.com"
                         >
-                        @error('email')
-                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                        @enderror
                     </div>
 
                     <!-- Password -->
@@ -61,42 +62,36 @@
                             id="password" 
                             name="password" 
                             required
-                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition duration-200"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition duration-200"
                             placeholder="••••••••"
                         >
-                        @error('password')
-                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                        @enderror
                     </div>
 
-                    <!-- Remember & Forgot -->
-                    <div class="flex items-center justify-between">
-                        <label for="remember" class="flex items-center">
-                            <input 
-                                type="checkbox" 
-                                id="remember" 
-                                name="remember"
-                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                            >
-                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
-                        </label>
-                        <a href="{{ route('password.request') }}" class="text-sm text-blue-600 hover:text-blue-800">
-                            Forgot password?
-                        </a>
+                    <!-- Confirm Password -->
+                    <div>
+                        <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1">Konfirmasi Password</label>
+                        <input 
+                            type="password" 
+                            id="password_confirmation" 
+                            name="password_confirmation" 
+                            required
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition duration-200"
+                            placeholder="••••••••"
+                        >
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium transition duration-200 shadow-md">
-                        Log in
+                    <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg font-medium transition duration-200 shadow-md">
+                        Daftar Sekarang
                     </button>
                 </form>
 
-                <!-- Register Link -->
+                <!-- Login Link -->
                 <div class="mt-8 text-center">
                     <p class="text-sm text-gray-600">
-                        Belum punya akun? 
-                        <a href="{{ route('register') }}" class="font-medium text-blue-600 hover:text-blue-800">
-                            Daftar sekarang
+                        Sudah punya akun? 
+                        <a href="{{ route('login') }}" class="font-medium text-purple-600 hover:text-purple-800">
+                            Login disini
                         </a>
                     </p>
                 </div>

@@ -40,7 +40,7 @@
                         <a href="{{ route('rooms.availability') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('rooms.availability.*') ? 'text-blue-600 font-medium' : '' }}">
                             <i class="mr-1 fas fa-calendar-check"></i> Rooms
                         </a>
-                        <a href="" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.*') ? 'text-blue-600 font-medium' : '' }}">
+                        <a href="" class="text-gray-600 whover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.*') ? 'text-blue-600 font-medium' : '' }}">
                             <i class="mr-1 fas fa-calendar-check"></i> Bookings
                         </a>
                         
@@ -109,7 +109,7 @@
     <footer class="bg-white border-t border-gray-200 mt-12">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <p class="text-center text-gray-500 text-sm">
-                &copy; {{ date('Y') }} Sistem Booking Ruang Kampus - Universitas Anda
+                &copy; {{ date('Y') }} BookSpace - STT Terpadu Nurul Fikri
             </p>
         </div>
     </footer>

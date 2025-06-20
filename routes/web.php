@@ -1,31 +1,35 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BookingController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
-use Illuminate\Container\Attributes\Auth;
 use Illuminate\Support\Facades\Route;
 
-// Auth routes
-// Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// User routes
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//     Route::resource('bookings', BookingController::class);
-//     Route::get('rooms/availability', [RoomController::class, 'checkAvailability'])->name('rooms.availability');
-// });
+Route::get('/', function () {
+    return view('index');
+})->name('home');
+
+Route::get('/rooms/availability', [RoomController::class, 'checkAvailability'])->name('rooms.availability');
+
+Route::middleware('auth')->group(function () {
+    //room
+    
+  
+    
+    //bookings
+    Route::get('/bookings', [RoomController::class, 'index'])->name('bookings.index');
+    Route::get('/bookings/{booking}', [RoomController::class, 'show'])->name('bookings.show');
+    Route::get('/bookings/{booking}/edit', [RoomController::class, 'edit'])->name('bookings.edit');
+    Route::put('/bookings/{booking}', [RoomController::class, 'update'])->name('bookings.update');
+    Route::delete('/bookings/{booking}', [RoomController::class, 'destroy'])->name('bookings.destroy');
+    Route::post('/bookings', [RoomController::class, 'store'])->name('bookings.create');
 
 
-// Admin routes
-// Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
-//     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-//     Route::resource('rooms', RoomController::class);
-//     Route::get('/bookings', [AdminController::class, 'bookings'])->name('admin.bookings');
-//     Route::put('/bookings/{booking}/approve', [AdminController::class, 'approveBooking'])->name('admin.bookings.approve');
-//     Route::put('/bookings/{booking}/reject', [AdminController::class, 'rejectBooking'])->name('admin.bookings.reject');
-// });
+    //profile
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+require __DIR__.'/auth.php';

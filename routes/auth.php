@@ -18,7 +18,7 @@ Route::middleware('guest')->group(function () {
     })->name('register');
 
     // Tetap gunakan controller Breeze untuk proses registrasi
-    Route::post('register', [RegisteredUserController::class, 'store']);
+    Route::post('register', [RegisteredUserController::class, 'store'])->name('register.store');
 
    // Custom Login View
     Route::get('login', function () {

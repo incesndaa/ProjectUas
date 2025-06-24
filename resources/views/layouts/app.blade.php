@@ -40,6 +40,7 @@
                         <a href="{{ route('rooms.availability') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('rooms.availability.*') ? 'text-blue-600 font-medium' : '' }}">
                             <i class="mr-1 fas fa-calendar-check"></i> Rooms
                         </a>
+                        <a href="{{ route('bookings.index') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.*') ? 'text-blue-600 font-medium' : '' }}">
                         <a href="" class="text-gray-600 whover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.*') ? 'text-blue-600 font-medium' : '' }}">
                             <i class="mr-1 fas fa-calendar-check"></i> Bookings
                         </a>

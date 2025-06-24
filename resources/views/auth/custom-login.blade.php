@@ -17,8 +17,8 @@
         <!-- Left Column (Illustration) -->
         <div class="md:w-1/2 gradient-bg flex items-center justify-center p-12 text-white">
             <div class="max-w-md">
-                <h2 class="text-4xl font-bold mb-4">Sistem Booking Ruang</h2>
-                <p class="text-lg opacity-90">Masuk untuk mengakses dashboard pemesanan ruangan kampus Anda.</p>
+                <h2 class="text-4xl font-bold mb-4">Room Booking System</h2>
+                <p class="text-lg opacity-90">Log in to access your campus room booking dashboard.</p>
             </div>
         </div>
 
@@ -94,9 +94,9 @@
                 <!-- Register Link -->
                 <div class="mt-8 text-center">
                     <p class="text-sm text-gray-600">
-                        Belum punya akun? 
+                        Don't have an account yet? 
                         <a href="{{ route('register') }}" class="font-medium text-blue-600 hover:text-blue-800">
-                            Daftar sekarang
+                            Register now
                         </a>
                     </p>
                 </div>

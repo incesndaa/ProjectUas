@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Cek Ketersediaan Ruang')
+@section('title', 'Check Space Availability')
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <!-- Header Section -->

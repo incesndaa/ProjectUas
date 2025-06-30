@@ -13,12 +13,11 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     //room
-<<<<<<< HEAD
+
     Route::get('/rooms/availability', [RoomController::class, 'checkAvailability'])->name('rooms.availability');
-=======
+
     
     
->>>>>>> 2ab2272a919ae1383948b97d5d0772ca505677c5
     //bookings
     Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
     Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');

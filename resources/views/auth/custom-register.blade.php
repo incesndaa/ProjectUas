@@ -16,8 +16,8 @@
         <!-- Left Column -->
         <div class="md:w-1/2 gradient-bg flex items-center justify-center p-12 text-white">
             <div class="max-w-md">
-                <h2 class="text-4xl font-bold mb-4">Daftar Akun Baru</h2>
-                <p class="text-lg opacity-90">Bergabung untuk mulai booking ruangan di kampus Anda.</p>
+                <h2 class="text-4xl font-bold mb-4">Register a New Account</h2>
+                <p class="text-lg opacity-90">Join to start booking rooms on your campus.</p>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
 
                     <!-- Name -->
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                         <input 
                             type="text" 
                             id="name" 
@@ -69,7 +69,7 @@
 
                     <!-- Confirm Password -->
                     <div>
-                        <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1">Konfirmasi Password</label>
+                        <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
                         <input 
                             type="password" 
                             id="password_confirmation" 
@@ -82,16 +82,16 @@
 
                     <!-- Submit Button -->
                     <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg font-medium transition duration-200 shadow-md">
-                        Daftar Sekarang
+                        Register Now
                     </button>
                 </form>
 
                 <!-- Login Link -->
                 <div class="mt-8 text-center">
                     <p class="text-sm text-gray-600">
-                        Sudah punya akun? 
+                        Already have an account? 
                         <a href="{{ route('login') }}" class="font-medium text-purple-600 hover:text-purple-800">
-                            Login disini
+                            Login here
                         </a>
                     </p>
                 </div>

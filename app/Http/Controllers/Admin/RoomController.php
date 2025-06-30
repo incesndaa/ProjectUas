@@ -62,6 +62,7 @@ class RoomController extends Controller
             'facilities' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
+        
 
         if ($request->hasFile('image')) {
             // Delete old image if exists

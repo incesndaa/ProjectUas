@@ -37,19 +37,22 @@
                 <!-- Menu -->
                 <div class="flex items-center space-x-8">
                     @auth
+                        <a href="{{ route('home') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('home.*') ? 'text-blue-600 font-medium' : '' }}">
+                            <i class="mr-1 fas fa-calendar-check"></i> Home
+                        </a>
                         <a href="{{ route('rooms.availability') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('rooms.availability.*') ? 'text-blue-600 font-medium' : '' }}">
                             <i class="mr-1 fas fa-calendar-check"></i> Rooms
                         </a>
-                        <a href="{{ route('bookings.index') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.*') ? 'text-blue-600 font-medium' : '' }}">
-                        <a href="" class="text-gray-600 whover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.*') ? 'text-blue-600 font-medium' : '' }}">
-                            <i class="mr-1 fas fa-calendar-check"></i> Bookings
+                        <a href="{{ route('bookings.index') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.index.*') ? 'text-blue-600 font-medium' : '' }}">
+                            <i class="mr-1 fas fa-calendar-check"></i> My Bookings
                         </a>
-                        
+
                         @if(auth()->user()->is_admin)
-                            <a href="" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('admin.*') ? 'text-blue-600 font-medium' : '' }}">
+                            <a href="{{ route('admin.dashboard') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('admin.*') ? 'text-blue-600 font-medium' : '' }}">
                                 <i class="mr-1 fas fa-tachometer-alt"></i> Admin
                             </a>
                         @endif
+                        
                         
                         <!-- User Dropdown -->
                         <div x-data="{ open: false }" class="relative">

@@ -45,17 +45,7 @@
                         </a>
                         <a href="{{ route('bookings.index') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.index.*') ? 'text-blue-600 font-medium' : '' }}">
                             <i class="mr-1 fas fa-calendar-check"></i> My Bookings
-
-                        <a href="{{ route('bookings.index') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.*') ? 'text-blue-600 font-medium' : '' }}">
-                            <i class="mr-1 fas fa-calendar-check"></i> Bookings
-
                         </a>
-
-                        @if(auth()->user()->is_admin)
-                            <a href="{{ route('admin.dashboard') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('admin.*') ? 'text-blue-600 font-medium' : '' }}">
-                                <i class="mr-1 fas fa-tachometer-alt"></i> Admin
-                            </a>
-                        @endif
                         
                         
                         <!-- User Dropdown -->
@@ -72,6 +62,12 @@
                                 <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                     <i class="mr-2 fas fa-user-cog"></i> Profile
                                 </a>
+                                @if(auth()->user()->is_admin)
+                                <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                    <i class="mr-2 fas fa-user-cog"></i> Dashboard Admin
+                                </a>
+                                @endif
+                                
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">

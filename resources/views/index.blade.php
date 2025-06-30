@@ -22,13 +22,10 @@
         
         @auth
         <a href="{{ route('rooms.availability') }}" class="inline-block px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition duration-200">
-            Buat Booking Sekarang
-
-        <a href="" class="inline-block px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition duration-200">
             Make a Booking Now
         </a>
         @endauth
-    </div>
+    </div>a
 </div>
 
 <!-- Features Section -->

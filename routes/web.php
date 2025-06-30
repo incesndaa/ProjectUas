@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoomController as AdminRoomController;
 use App\Http\Controllers\Admin\RoomsController;
+use App\Http\Controllers\Admin\wDashboardController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BookingController;
@@ -19,7 +20,6 @@ Route::middleware('auth')->group(function () {
     //room
     Route::get('/rooms/availability', [RoomController::class, 'checkAvailability'])->name('rooms.availability');
 
-    Route::get('/rooms/availability', [RoomController::class, 'checkAvailability'])->name('rooms.availability');
     //bookings
     Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
     Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');

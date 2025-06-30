@@ -25,40 +25,6 @@ class RoomController extends Controller
             'bookedRoomIds' => $bookedRoomIds,
         ]);
 
-        // $validated = [];
-    
-        // if ($request->hasAny(['date', 'start_time', 'end_time'])) {
-        //     $validated = $request->validate([
-        //         'date' => 'required|date|after_or_equal:today',
-        //         'start_time' => 'required|date_format:H:i',
-        //         'end_time' => 'required|date_format:H:i|after:start_time'
-        //     ]);
-        // } else {
-            
-        //     $validated = [
-        //         'date' => now()->format('Y-m-d'),
-        //         'start_time' => '08:00',
-        //         'end_time' => '17:00'
-        //     ];
-        // }
-
-        // $bookedRooms = Booking::where('date', $validated['date'])
-        //     ->where(function($query) use ($validated) {
-        //         $query->whereBetween('start_time', [$validated['start_time'], $validated['end_time']])
-        //             ->orWhereBetween('end_time', [$validated['start_time'], $validated['end_time']]);
-        //     })
-        //     ->pluck('room_id');
-
-        // $availableRooms = Room::whereNotIn('id', $bookedRooms)
-        //     ->where('is_active', true)
-        //     ->get();
-
-        // return view('rooms.availability', [
-        //     'rooms' => $availableRooms,
-        //     'date' => $validated['date'],
-        //     'startTime' => $validated['start_time'],
-        //     'endTime' => $validated['end_time']
-        // ]);
     }
     /**
      * Display a listing of the resource.

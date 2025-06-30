@@ -17,16 +17,9 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     //room
-<<<<<<< HEAD
     Route::get('/rooms/availability', [RoomController::class, 'checkAvailability'])->name('rooms.availability');
 
-=======
-
     Route::get('/rooms/availability', [RoomController::class, 'checkAvailability'])->name('rooms.availability');
-
-    
-    
->>>>>>> 413575b70380f7c56c4d3ccd84579348c93da3e4
     //bookings
     Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
     Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');

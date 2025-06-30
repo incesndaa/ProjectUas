@@ -21,13 +21,11 @@
         @endguest
         
         @auth
-<<<<<<< HEAD
         <a href="{{ route('rooms.availability') }}" class="inline-block px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition duration-200">
             Buat Booking Sekarang
-=======
+
         <a href="" class="inline-block px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-100 transition duration-200">
             Make a Booking Now
->>>>>>> 413575b70380f7c56c4d3ccd84579348c93da3e4
         </a>
         @endauth
     </div>
@@ -111,27 +109,5 @@
     </div>
 </div>
 
-<!-- Call to Action -->
-{{-- <div class="bg-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">Siap Memesan Ruangan?</h2>
-        
-        @guest
-        <div class="space-x-4">
-            <a href="" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-200">
-                Login Sekarang
-            </a>
-            <a href="" class="inline-block px-6 py-3 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition duration-200">
-                Daftar Akun Baru
-            </a>
-        </div>
-        @endguest
-        
-        @auth
-        <a href="" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-200">
-            Buat Booking Sekarang
-        </a>
-        @endauth
-    </div>
-</div> --}}
+
 @endsection

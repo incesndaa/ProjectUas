@@ -7,14 +7,14 @@
         <ul class="space-y-2 px-4">
             <li>
                 <a href="{{ route('admin.dashboard') }}" 
-                   class="flex items-center p-3 rounded-lg hover:bg-blue-700 transition-all {{ request()->is('admin/dashboard*') ? 'bg-blue-600 shadow-md' : '' }}">
+                   class="flex items-center p-3 rounded-lg hover:bg-blue-700 transition-all {{ request()->is('admin/dashboard') ? 'bg-blue-600 shadow-md' : '' }}">
                    <i class="fas fa-tachometer-alt mr-3"></i>
                    <span>Dashboard</span>
                 </a>
             </li>
             <li>
                 <a href="{{ route('admin.rooms.index') }}" 
-                   class="flex items-center p-3 rounded-lg hover:bg-blue-700 transition-all {{ request()->is('admin/rooms*') ? 'bg-blue-600 shadow-md' : '' }}">
+                   class="flex items-center p-3 rounded-lg hover:bg-blue-700 transition-all {{ request()->is('admin/rooms') ? 'bg-blue-600 shadow-md' : '' }}">
                    <i class="fas fa-door-open mr-3"></i>
                    <span>Ruangan</span>
                 </a>

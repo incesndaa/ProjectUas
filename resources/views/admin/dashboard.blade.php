@@ -1,5 +1,3 @@
-@extends('admin.layouts.admin')
-
 @section('content')
 <div class="container mx-auto">
     <h1 class="text-3xl font-bold mb-8">Dashboard Admin</h1>
@@ -86,4 +84,3 @@
     </div>
 </div>
 @endsection
-

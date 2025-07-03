@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 gap-6">
         <!-- Nama Ruangan -->
         <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">Nama Ruangan</label>
+            <label for="name" class="block text-sm font-medium text-gray-700">Room Name</label>
             <input type="text" name="name" id="name" value="{{ old('name', $room->name ?? '') }}"
                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
             @error('name')
@@ -12,7 +12,7 @@
 
         <!-- Lokasi -->
         <div>
-            <label for="location" class="block text-sm font-medium text-gray-700">Lokasi</label>
+            <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
             <input type="text" name="location" id="location" value="{{ old('location', $room->location ?? '') }}"
                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
             @error('location')
@@ -22,7 +22,7 @@
 
         <!-- Kapasitas -->
         <div>
-            <label for="capacity" class="block text-sm font-medium text-gray-700">Kapasitas</label>
+            <label for="capacity" class="block text-sm font-medium text-gray-700">Capacity</label>
             <input type="number" name="capacity" id="capacity" value="{{ old('capacity', $room->capacity ?? '') }}"
                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
             @error('capacity')
@@ -32,7 +32,7 @@
 
         <!-- Fasilitas -->
         <div>
-            <label for="facilities" class="block text-sm font-medium text-gray-700">Fasilitas</label>
+            <label for="facilities" class="block text-sm font-medium text-gray-700">Facility</label>
             <textarea name="facilities" id="facilities" rows="3"
                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('facilities', $room->facilities ?? '') }}</textarea>
             @error('facilities')
@@ -42,7 +42,7 @@
 
         <!-- Gambar -->
         <div>
-            <label for="image" class="block text-sm font-medium text-gray-700">Gambar Ruangan</label>
+            <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
             <input type="file" name="image" id="image"
                    class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             @error('image')

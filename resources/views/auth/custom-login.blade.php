@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sistem Booking</title>
+    <title>Login - BookSpace</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .gradient-bg {
@@ -69,21 +69,6 @@
                         @enderror
                     </div>
 
-                    <!-- Remember & Forgot -->
-                    <div class="flex items-center justify-between">
-                        <label for="remember" class="flex items-center">
-                            <input 
-                                type="checkbox" 
-                                id="remember" 
-                                name="remember"
-                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                            >
-                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
-                        </label>
-                        <a href="{{ route('password.request') }}" class="text-sm text-blue-600 hover:text-blue-800">
-                            Forgot password?
-                        </a>
-                    </div>
 
                     <!-- Submit Button -->
                     <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium transition duration-200 shadow-md">

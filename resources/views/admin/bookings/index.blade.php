@@ -8,12 +8,12 @@
         <table class="min-w-full divide-y divide-gray-200" style="overflow: visible !important;">
             <thead class="bg-gray-50">
                 <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ruangan</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pemesan</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal/Waktu</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tujuan</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Room</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Booker</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Time</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Purpose</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
@@ -73,10 +73,9 @@
                                     </form>
                                 </div>
                             </div>
-                           
 
                             <!-- Delete Button -->
-                            <form action="{{ route('admin.bookings.destroy', $booking) }}" method="POST">
+                            <form action="{{ route('admin.bookings.destroy', $booking) }}" method="POST" onsubmit="return confirm('Do you want to delete it?')">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-600 hover:text-red-900 p-1">
@@ -85,45 +84,6 @@
                             </form>
                         </div>
                     </td>
-                    {{-- <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <div class="flex items-center space-x-2">
-                            <!-- Dropdown Edit Status -->
-                            <div class="relative" x-data="{ open: false }">
-                                <button @click="open = !open" class="text-blue-600 hover:text-blue-900 p-1">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                
-                                <div x-show="open" @click.away="open = false" 
-                                     class="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-10 border border-gray-200">
-                                    <form action="{{ route('admin.bookings.updateStatus', $booking->id) }}" method="POST">
-                                        @csrf
-                                        @method('PATCH')
-                                        <button type="submit" name="status" value="pending" 
-                                                class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 {{ $booking->status === 'pending' ? 'bg-blue-50 text-blue-600' : '' }}">
-                                            <i class="fas fa-clock mr-2"></i> Pending
-                                        </button>
-                                        <button type="submit" name="status" value="approved" 
-                                                class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 {{ $booking->status === 'approved' ? 'bg-green-50 text-green-600' : '' }}">
-                                            <i class="fas fa-check mr-2"></i> Approved
-                                        </button>
-                                        <button type="submit" name="status" value="rejected" 
-                                                class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 {{ $booking->status === 'rejected' ? 'bg-red-50 text-red-600' : '' }}">
-                                            <i class="fas fa-times mr-2"></i> Rejected
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <!-- Delete Button -->
-                            <form action="{{ route('admin.bookings.destroy', $booking) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="text-red-600 hover:text-red-900 p-1">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td> --}}
                 </tr>
                 @endforeach
             </tbody>

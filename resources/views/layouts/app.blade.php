@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Vite CSS & JS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
@@ -38,13 +34,13 @@
                 <div class="flex items-center space-x-8">
                     @auth
                         <a href="{{ route('home') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('home.*') ? 'text-blue-600 font-medium' : '' }}">
-                            <i class="mr-1 fas fa-calendar-check"></i> Home
+                            Home
                         </a>
                         <a href="{{ route('rooms.availability') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('rooms.availability.*') ? 'text-blue-600 font-medium' : '' }}">
-                            <i class="mr-1 fas fa-calendar-check"></i> Rooms
+                            Rooms
                         </a>
                         <a href="{{ route('bookings.index') }}" class="text-gray-600 hover:text-blue-600 transition duration-200 {{ request()->routeIs('bookings.index.*') ? 'text-blue-600 font-medium' : '' }}">
-                            <i class="mr-1 fas fa-calendar-check"></i> My Bookings
+                            My Bookings
                         </a>
                         
                         
@@ -59,12 +55,12 @@
                             
                             <div x-show="open" @click.away="open = false" 
                                  class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                                <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                     <i class="mr-2 fas fa-user-cog"></i> Profile
                                 </a>
                                 @if(auth()->user()->is_admin)
                                 <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                    <i class="mr-2 fas fa-user-cog"></i> Dashboard Admin
+                                    <i class="mr-2 fas fa-shield-alt"></i> Dashboard Admin
                                 </a>
                                 @endif
                                 
@@ -78,10 +74,10 @@
                         </div>
                     @else
                         <a href="{{ route('login') }}" class="text-gray-600 hover:text-blue-600 transition duration-200">
-                            <i class="mr-1 fas fa-sign-in-alt"></i> Login
+                            Login
                         </a>
                         <a href="{{ route('register') }}" class="text-gray-600 hover:text-blue-600 transition duration-200">
-                            <i class="mr-1 fas fa-user-plus"></i> Register
+                            Register
                         </a>
                     @endauth
                 </div>

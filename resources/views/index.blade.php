@@ -15,7 +15,7 @@
                 Login for Booking
             </a>
             <a href="{{ route('register') }}" class="inline-block px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-blue-700 transition duration-200">
-                Account List
+                Register
             </a>
         </div>
         @endguest
@@ -25,7 +25,7 @@
             Make a Booking Now
         </a>
         @endauth
-    </div>a
+    </div>
 </div>
 
 <!-- Features Section -->
@@ -63,8 +63,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Instant Notification</h3>
-                <p class="text-gray-600">Get booking status notifications via email</p>
+                <h3 class="text-xl font-semibold mb-2">Flexible Booking</h3>
+                <p class="text-gray-600">Easily reschedule or cancel bookings anytime</p>
             </div>
         </div>
     </div>
@@ -84,10 +84,18 @@
                     <p class="text-gray-600">Use your campus account to access the system</p>
                 </div>
             </div>
+
+            <div class="flex items-start">
+                <div class="flex-shrink-0 bg-blue-600 rounded-full h-10 w-10 flex items-center justify-center text-white font-bold mr-4">2d</div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Choose the room you want to book</h3>
+                    <p class="text-gray-600">Select the room you want to book on the room page</p>
+                </div>
+            </div>
             
             <!-- Langkah 2 -->
             <div class="flex items-start">
-                <div class="flex-shrink-0 bg-blue-600 rounded-full h-10 w-10 flex items-center justify-center text-white font-bold mr-4">2</div>
+                <div class="flex-shrink-0 bg-blue-600 rounded-full h-10 w-10 flex items-center justify-center text-white font-bold mr-4">3</div>
                 <div>
                     <h3 class="text-lg font-semibold mb-2">Check Availability</h3>
                     <p class="text-gray-600">Select a date and time to view available spaces</p>
@@ -96,9 +104,9 @@
             
             <!-- Langkah 3 -->
             <div class="flex items-start">
-                <div class="flex-shrink-0 bg-blue-600 rounded-full h-10 w-10 flex items-center justify-center text-white font-bold mr-4">3</div>
+                <div class="flex-shrink-0 bg-blue-600 rounded-full h-10 w-10 flex items-center justify-center text-white font-bold mr-4">4</div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-2">Fill out the Booking Form</h3>
+                    <h3 class="text-lg font-semibold mb-2">Submit Your Booking Form</h3>
                     <p class="text-gray-600">Complete the order data and submit</p>
                 </div>
             </div>

@@ -3,8 +3,7 @@
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoomController as AdminRoomController;
-use App\Http\Controllers\Admin\RoomsController;
-use App\Http\Controllers\Admin\wDashboardController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BookingController;
@@ -26,15 +25,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/bookings', [BookingController::class, 'index'])->name('bookings.index');
 
     //profile
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', function () {
+        return view('profile.show', ['user' => auth()->user()]);
+    })->name('profile.show');
 });
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     
+    // Manajemen User (CRUD)
+    Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('admin.users.store');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('admin.users.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+
     // Manajemen Ruangan (CRUD)
     Route::get('/rooms', [AdminRoomController::class, 'index'])->name('admin.rooms.index');
     Route::get('/rooms/create', [AdminRoomController::class, 'create'])->name('admin.rooms.create');

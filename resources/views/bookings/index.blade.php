@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Riwayat Booking')
+@section('title', 'Booking History')
 
 @section('content')
 <div class="container mx-auto px-4 py-8">
-    <h1 class="text-2xl font-bold text-gray-800 mb-6">Riwayat Booking Saya</h1>
+    <h1 class="text-2xl font-bold text-gray-800 mb-6">My Booking History</h1>
     
     @if($bookings->isEmpty())
         <div class="bg-white rounded-lg shadow-md p-6 text-center text-gray-500">
-            Anda belum memiliki riwayat booking.
+            You don't have a booking history yet.
         </div>
     @else
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
@@ -16,9 +16,9 @@
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ruangan</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Waktu</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Room</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                         </tr>
                     </thead>
@@ -38,15 +38,15 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 @if($booking->status == 'approved')
                                     <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                        Disetujui
+                                        Approved
                                     </span>
                                 @elseif($booking->status == 'rejected')
                                     <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                                        Ditolak
+                                        Rejected
                                     </span>
                                 @else
                                     <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                                        Menunggu
+                                        Pending
                                     </span>
                                 @endif
                             </td>

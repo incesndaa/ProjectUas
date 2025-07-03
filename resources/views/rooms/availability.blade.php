@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', 'Check Space Availability')
+@section('title', 'Rooms')
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <!-- Header Section -->
     <div class="mb-8 text-center">
-        <h1 class="text-3xl font-bold text-gray-800 mb-2">Available Rooms</h1>
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Select Rooms</h1>
         <p class="text-gray-600 max-w-2xl mx-auto">Browse our selection of meeting and conference spaces. Book the perfect room for your needs.</p>
     </div>
 
@@ -25,9 +25,15 @@
                 
                 <!-- Room Image Placeholder -->
                 <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
-                    <svg class="w-16 h-16 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                    </svg>
+                        @if ($room->image)
+                            <img src="{{ asset('storage/room_images/' . $room->image) }}"
+                                alt="{{ $room->name }}"
+                                class="w-full h-full object-cover">
+                        @else
+                            <div class="flex items-center justify-center h-full text-gray-400">
+                                <span class="text-sm">No Image</span>
+                            </div>
+                        @endif
                 </div>
                 
                 <!-- Room Content -->

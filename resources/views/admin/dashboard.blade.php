@@ -14,7 +14,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <h3 class="text-gray-500">Total Ruangan</h3>
+                    <h3 class="text-gray-500">Total Rooms</h3>
                     <p class="text-2xl font-semibold">{{ $stats['rooms'] }}</p>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <h3 class="text-gray-500">Total Booking</h3>
+                    <h3 class="text-gray-500">Total Bookings</h3>
                     <p class="text-2xl font-semibold">{{ $stats['bookings'] }}</p>
                 </div>
             </div>
@@ -44,8 +44,8 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <h3 class="text-gray-500">Pending Booking</h3>
-                    <p class="text-2xl font-semibold">{{ $stats['pending_bookings'] }}</p>
+                    <h3 class="text-gray-500">Total Users</h3>
+                    <p class="text-2xl font-semibold">{{ $stats['users'] }}</p>
                 </div>
             </div>
         </div>
@@ -53,14 +53,14 @@
 
     <!-- Recent Bookings Table -->
     <div class="bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-4">Booking Terbaru</h2>
+        <h2 class="text-xl font-semibold mb-4">Recent Bookings</h2>
         <div class="overflow-x-auto">
             <table class="min-w-full">
                 <thead>
                     <tr class="bg-gray-50">
                         <th class="px-6 py-3 text-left">User</th>
-                        <th class="px-6 py-3 text-left">Ruangan</th>
-                        <th class="px-6 py-3 text-left">Tanggal</th>
+                        <th class="px-6 py-3 text-left">Room</th>
+                        <th class="px-6 py-3 text-left">Date</th>
                         <th class="px-6 py-3 text-left">Status</th>
                     </tr>
                 </thead>
@@ -69,7 +69,7 @@
                     <tr class="border-b">
                         <td class="px-6 py-4">{{ $booking->user->name }}</td>
                         <td class="px-6 py-4">{{ $booking->room->name }}</td>
-                        <td class="px-6 py-4">{{ $booking->booking_date }}</td>
+                        <td class="px-6 py-4">{{ $booking->date }}</td>
                         <td class="px-6 py-4">
                             <span class="px-2 py-1 rounded-full text-sm 
                                 {{ $booking->status === 'approved' ? 'bg-green-100 text-green-800' : 

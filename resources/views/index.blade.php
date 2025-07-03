@@ -86,7 +86,7 @@
             </div>
 
             <div class="flex items-start">
-                <div class="flex-shrink-0 bg-blue-600 rounded-full h-10 w-10 flex items-center justify-center text-white font-bold mr-4">2d</div>
+                <div class="flex-shrink-0 bg-blue-600 rounded-full h-10 w-10 flex items-center justify-center text-white font-bold mr-4">2</div>
                 <div>
                     <h3 class="text-lg font-semibold mb-2">Choose the room you want to book</h3>
                     <p class="text-gray-600">Select the room you want to book on the room page</p>

@@ -26,7 +26,7 @@
                 <!-- Room Image Placeholder -->
                 <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
                         @if ($room->image)
-                            <img src="{{ asset('storage/room_images/' . $room->image) }}"
+                            <img src="{{ asset('room_images/' . $room->image) }}"
                                 alt="{{ $room->name }}"
                                 class="w-full h-full object-cover">
                         @else

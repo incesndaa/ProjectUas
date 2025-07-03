@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookSpace Admin</title>
-    @vite(['resources/css/app.css', 'resources/js/admin.js'])
+    <link rel="stylesheet" href="{{ asset('build/assets/app-BWfqPNo8.css') }}">
+    <script src="{{ asset('build/assets/app-DaBYqt0m.js') }}" defer></script>
     <style>
         [x-cloak] { display: none !important; }
         .relative { position: relative; }

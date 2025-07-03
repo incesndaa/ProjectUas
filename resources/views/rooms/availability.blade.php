@@ -23,19 +23,6 @@
                     </div>
                 @endif
                 
-                <!-- Room Image Placeholder -->
-                <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
-                        @if ($room->image)
-                            <img src="{{ asset('room_images/' . $room->image) }}"
-                                alt="{{ $room->name }}"
-                                class="w-full h-full object-cover">
-                        @else
-                            <div class="flex items-center justify-center h-full text-gray-400">
-                                <span class="text-sm">No Image</span>
-                            </div>
-                        @endif
-                </div>
-                
                 <!-- Room Content -->
                 <div class="p-6">
                     <div class="flex justify-between items-start mb-3">

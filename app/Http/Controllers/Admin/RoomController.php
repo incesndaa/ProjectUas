@@ -31,11 +31,6 @@ class RoomController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        if ($request->hasFile('image')) {
-            $fullPath = $request->file('image')->store('room_images', 'public');
-            $validated['image'] = basename($fullPath);
-        }
-
         Room::create($validated);
 
         return redirect()->route('admin.rooms.index')
@@ -63,17 +58,6 @@ class RoomController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         
-
-        if ($request->hasFile('image')) {
-            // Delete old image if exists
-            if ($room->image) {
-                Storage::disk('public')->delete('room_images/'.$room->image);
-            }
-            
-            $fullPath = $request->file('image')->store('room_images', 'public');
-            $validated['image'] = basename($fullPath);
-        }
-
         // Update room
         $room->update($validated);
 

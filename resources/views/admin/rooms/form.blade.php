@@ -39,21 +39,5 @@
                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
-
-        <!-- Gambar -->
-        <div>
-            <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
-            <input type="file" name="image" id="image"
-                   class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
-            @error('image')
-                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-            @enderror
-            
-            @if(isset($room) && $room->image)
-                <div class="mt-2">
-                    <img src="{{ asset('storage/room_images/' . $room->image) }}" alt="Preview" class="h-32 rounded-md">
-                </div>
-            @endif
-        </div>
     </div>
 </div>

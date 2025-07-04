@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - BookSpace</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    @vite(['resources/css/app.css', 'resources/js/admin.js'])
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);

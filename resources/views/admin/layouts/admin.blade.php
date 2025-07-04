@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookSpace Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    @vite(['resources/css/app.css', 'resources/js/admin.js'])
     <link rel="stylesheet" href="{{ asset('build/assets/app-BWfqPNo8.css') }}">
     <script src="{{ asset('build/assets/app-DaBYqt0m.js') }}" defer></script>
     <style>

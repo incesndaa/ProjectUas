@@ -27,7 +27,7 @@
             @yield('content')
         </div>
     </div>
-    @yield('scripts') sebelum </body>.
+    @yield('scripts')
 
 
     <!-- Chart.js -->
